@@ -117,6 +117,6 @@ end
 #guardamos en variables 
 tutor = Tutor.new
 tutor = Alien.new
-#vamos a preguntar si el humano es un alien 
+
 #vamos a preguntar si el alien es humano 
 puts alien.is_a?(Humano)
