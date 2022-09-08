@@ -39,7 +39,7 @@ def iterar
 end 
 end
 end
-  
+
 arreglo = [1,2,3]
 #para elevar al cuadrado 
 arreglo.iterar do |n|
