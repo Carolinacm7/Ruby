@@ -1,3 +1,24 @@
+=begin 
+Las cadenas se componen de una secuencia arbitraria de bytes 
+(normalmente caracteres)
+y se inicializan y manipulan como cualquier otro objeto. 
+Aunque puede usar String.new(...)para crear una cadena
+es mas comun  usar un literal
+
+Los literales más comunes son
+las comillas simples y dobles ( '...'y "...").
+Las comillas simples no permiten la interpolación,
+mientras que las comillas dobles sí.
+La interpolación es donde una cadena se incluye 
+en otra usando la #{}sintaxis.
+
+También puede usar otros literales, como
+%{... }cadenas interpoladas
+y cadenas %q{...}no interpoladas. 
+Estos son útiles si sus cadenas tienen los caracteres 'o "en ellos.
+=end
+# Find the first index of a character
+my_string.index('m') 
 #concatenacion de variables
 class HolaMundo
     def initialize()
@@ -76,9 +97,9 @@ class HolaMundo
     def initialize()
     end
     def saluda()
-       nombre = "annie"
-       nombre = nombre.capitalize 
-       print nombre
+        nombre = "annie"
+        nombre = nombre.capitalize 
+        print nombre
     end
 end
 objeto = HolaMundo.new()
