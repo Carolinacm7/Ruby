@@ -120,3 +120,58 @@ end
 objeto = HolaMundo.new()
 objeto.saluda
 gets() 
+
+#exercise 
+=begin 
+Implemente el LogLineParser#messagemétodo
+para devolver el mensaje de una línea de registro:
+
+LogLineParser.new('[ERROR]: Invalid operation').message
+"Invalid operation"
+
+Cualquier espacio en blanco inicial o final debe eliminarse:
+LogLineParser.new("[WARNING]:  Disk almost full\r\n").message
+# => "Disk almost full"
+=end
+class LogLineParser
+    def initialize(line)
+    @line = line
+    end
+
+    def message
+  #lo que hay dentro // se sustituye por información vacía 
+  #what is inside // is replaced by empty information 
+    return @line.gsub(/\[[A-Z]*\]: / ,"").strip
+    end
+
+=begin
+Implemente el LogLineParser#log_levelmétodo 
+para devolver el nivel de registro de una línea de registro,
+que debe devolverse en minúsculas:
+
+LogLineParser.new('[ERROR]: Invalid operation').log_level
+"error"
+=end
+    def log_level
+#especifica la posición en la cadena para comenzar la búsqueda.
+#class method which match the regular expression with the string and specifies the position in the string to begin the search.
+    return @line.match(/\[(.*?)\]/)[1].downcase
+    end
+=begin 
+Implemente el LogLineParser#reformatmétodo que reformatea 
+la línea de registro, colocando el mensaje primero y
+el nivel de registro después entre paréntesis:
+
+LogLineParser.new('[INFO]: Operation completed').reformat
+"Operation completed (info)"
+=end
+    def reformat
+    # el operador #{}la sustitución de expresiones dentro de un literal de cadena
+    #The #{} operator technically performs expression substitution inside a string    literal
+        return "#{message} (#{log_level})"
+    end
+end
+
+LogLineParser.new('[ERROR]: Invalid operation').message
+LogLineParser.new("[WARNING]:  Disk almost full\r\n").message
+LogLineParser.new('[ERROR]: Invalid operation').log_level
