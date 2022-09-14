@@ -1,3 +1,25 @@
+=begin 
+CONDICIONALES
+Los dos tipos de números más comunes en Ruby son:
+
+*Enteros: números sin dígitos detrás del separador decimal 
+(números enteros). Los ejemplos son -6, 0, 1, 25y .976500000
+Integer son los números son precisos a una unidad entera
+
+*Números de punto flotante: números con cero o más dígitos detrás
+del separador decimal. Los ejemplos son -2.4, 0.1, 3.14y .16.9840251024.0
+Float tienen una precisión fraccionaria 
+
+*Integer#to_f: Coaccionar a un nuevo flotador
+
+*Float#ceil: Redondea al entero más cercano
+
+*Float#floor: Redondea hacia abajo al entero más cercano
+
+*Float#round: Redondear al entero más cercano
+
+*Float#to_i: Truncar al entero más cercano
+=end
 #recibir dos numeros de un usuario 
 numero_uno = gets.chomp.to_i
 numero_dos = gets.chomp.to_i
