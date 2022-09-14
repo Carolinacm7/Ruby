@@ -24,3 +24,5 @@ end
 end
 end
 puts SoyObjetoLoJuro.nombre_clase
+
+exercise 

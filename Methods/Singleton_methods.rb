@@ -72,3 +72,22 @@ if dogDos.respond_to?(:hablar) then
 else 
     puts  "el perro no ladra"
 end 
+
+=begin 
+*true y false se utilizan para representar estados lógicos booleanos.
+
+*Son instancias singleton de los objetos TrueClassy .FalseClass
+
+*pueden aparecer como literales en el código o como 
+resultado de métodos lógicos ( &&, ||, !) o de comparación ( <, >, ).==
+
+*Cuando no se utilizan valores booleanos estrictos, 
+se aplican reglas de evaluación de verdadero y falso :
+=end 
+def falsey
+    nil || false
+end
+
+def truthy
+    not falsey
+end
