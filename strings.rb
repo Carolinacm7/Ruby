@@ -175,3 +175,58 @@ end
 LogLineParser.new('[ERROR]: Invalid operation').message
 LogLineParser.new("[WARNING]:  Disk almost full\r\n").message
 LogLineParser.new('[ERROR]: Invalid operation').log_level
+
+=begin 
+Con el uniqmétodo puede eliminar TODOS los elementos duplicados de una matriz.
+Si tienes una matriz como esta :
+=end 
+n = [ 1 , 1 , 1 , 2 , 3 , 4 , 5 ]
+=begin 
+Donde 1se duplica el número.
+
+con  uniq  esta matriz elimina los adicionales y
+devuelve una NUEVA matriz con números únicos.
+=end
+n.uniq
+# [1,2,3,4,5]
+=begin 
+Instrucciones
+Determinar si una palabra o frase es un isograma.
+
+Un isograma (también conocido como "palabra sin patrón") 
+es una palabra o frase sin una letra repetida, sin embargo,
+los espacios y los guiones pueden aparecer varias veces.
+
+Ejemplos de isogramas:
+
+lumberjacks
+background
+downstream
+six-year-old
+La palabra isograms , sin embargo, no es un isograma,
+porque la s se repite.
+=end
+class Isogram
+    def self.isogram?(word)
+    #creo objeto palabra y le pregunto si es un isograma
+        new(word).isogram?
+    end
+    def initialize(word)
+    #inicializo la variable de word 
+        @word = word
+    end
+    def isogram?
+    #creo variable que verifica si es un isograma 
+    #hay letras repetidas en la frase?
+    #uso uniq para eliminar repetidos 
+        letters == letters.uniq
+    end
+#uso metodo privado para dar especificaciones 
+    private
+    def letters
+    #uso un array para que cada letra se vuelva minuscula 
+        word.downcase.scan(/[a-z]/)
+    end
+#añado un accesor para leer la informacion de palabra 
+    attr_reader :word
+end
